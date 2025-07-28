@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organización Solidaria</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bienvenidos a nuestra organización</h1>
+    </header>
+
+    <!-- Sección de Proyectos -->
+    <section id="projects">
+        <h2>Nuestros Proyectos</h2>
+        <div class="filters">
+            <input type="text" id="project-search" placeholder="Buscar proyectos...">
+            <button id="filter-active">Activos</button>
+            <button id="filter-completed">Completados</button>
+        </div>
+        <div id="projects-container"></div>
+    </section>
+
+    <!-- Sección de Eventos -->
+    <section id="events">
+        <h2>Próximos Eventos</h2>
+        <div class="search-container">
+            <input type="text" id="event-search" placeholder="Buscar eventos...">
+            <select id="event-category">
+                <option value="all">Todas las categorías</option>
+                <option value="voluntariado">Voluntariado</option>
+                <option value="recaudación">Recaudación</option>
+            </select>
+            <button id="search-btn">Buscar</button>
+        </div>
+        <div id="events-container"></div>
+
+        <!-- Enlace al formulario de registro de eventos -->
+        <div>
+            <a href="registrar_evento.php">Registrar nuevo evento</a>
+        </div>
+    </section>
+
+    <!-- Sección de Donaciones -->
+    <section id="donations">
+        <h2>Apoya Nuestra Causa</h2>
+        <div id="donation-form">
+            <form action="carrito_donaciones.php" method="POST">
+                <input type="number" name="donation_amount" placeholder="Monto ($)" required>
+                <input type="text" name="donor_name" placeholder="Tu nombre" required>
+                <button type="submit" name="add">Agregar al carrito</button>
+                <button type="submit" name="checkout">Finalizar donación</button>
+            </form>
+        </div>
+        <div id="progress-container"></div>
+    </section>
+
+    <!-- Notificaciones -->
+    <div id="notifications"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
